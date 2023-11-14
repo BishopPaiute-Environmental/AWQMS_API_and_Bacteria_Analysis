@@ -16,6 +16,7 @@ setwd("X:/WQCP/R/CODE/DISCHARGE_PLANT_6")
 
 # DATA IS OFF BY A YEAR _ NEEDS TO BE FIXED 
 # IMPORT ARCHIVE DATA AND MAKE PLOTS OF IT--------------------------------------------------------
+# test
 
 plant6Qarchive <- read_excel("X:/WQCP/DATA/Discharge_Plant6/LA_AqueductArchive.xlsx", sheet = "BishopCr@Plant6", skip = 2, col_names = TRUE,
                              col_types = c("date", "numeric","numeric","date", "numeric","numeric","date", "numeric","numeric",
