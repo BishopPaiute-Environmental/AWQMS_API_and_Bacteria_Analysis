@@ -1,5 +1,7 @@
-# WQ_Analysis
-We will use this to store out WQ analysis code that we generate. I will add versions of our scripts that have our inforamtion and keep that private. Under another public repository I will add our code and remove any identifiers. 
+# AWQMS API and Bacteria Anlysis 
+Bishop Paiute Tribe - Environmental Management Office - Water Quality Control Program                            
+R Script to obtain organizational water quality data from AWQMS using an Application Programming Interface (API) 
+As well as code to generate geometric means from E coli data collected per CWA 106 Guidelines                      
 
 # Disclaimer:
 The following disclaimer should be added to all code: 
