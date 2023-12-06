@@ -1,4 +1,4 @@
-# AWQMS API and Bacteria Anlysis 
+# AWQMS API and Bacteria Analysis 
 Bishop Paiute Tribe - Environmental Management Office - Water Quality Control Program                            
 R Script to obtain organizational water quality data from AWQMS using an Application Programming Interface (API) 
 As well as code to generate geometric means from E coli data collected per CWA 106 Guidelines                      
