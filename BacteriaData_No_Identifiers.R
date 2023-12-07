@@ -65,7 +65,7 @@ userLoginName <- "PLACE_YOUR_ORGANIZATIONS_USER_NAME_HERE" # The username is enc
 MIN_DATE<-c("10-01-2009")
 MAX_DATE<-c("09-30-2023")
 
-SITES<-c("SW-1,SW-2,SW-4,ELD,GYM,Leas,TuSu,SW-3,Pond-1,Pond-3") #Example of monitoring location identifiers in AWQMS data
+SITES<-c("SW-1,SW-2,SW-3,SW-4") #Example of monitoring location identifiers in AWQMS data
 uri<-paste0("https://west.gselements.com/api/ResultsVer1?OrganizationIdentifiersCsv=PLACE_YOUR_ORGANIZATIONS_ID_HERE&MonitoringLocationIdentifiersCsv=",SITES,"&MinDate=",MIN_DATE,"&MaxDate=",MAX_DATE)#,"&Characteristic=",CHARACTERISTIC
 
 getUTCTime <- function() {
@@ -239,13 +239,13 @@ FILE_NAME<-"filename.jpg"
 FILE_NAME2<-"filename2.jpg"
 
 #CHANGE POINT SHAPES
-P_SHAPES<- c(21,21,22,24,24,23,23) #Elders, Gym,Leas,SW-1, SW-2, SW-3, SW-4
-P_SHAPES2<- c(21,21,22,24,24,23,23,25) #Elders, Gym,Leas,SW-1, SW-2, SW-3, SW-4, SF TuSu
-P_SHAPES3<- c(21,21,22,22,22,24,24,23,23,25) #Elders, Gym,Leas,Pond-1, Pond-3, SW-1, SW-2, SW-3, SW-4, SF TuSu
+P_SHAPES<- c(21,21,22,24,24,23,23) #SW-1, SW-2, SW-3, SW-4
+P_SHAPES2<- c(21,21,22,24,24,23,23,25) #SW-1, SW-2, SW-3, SW-4
+P_SHAPES3<- c(21,21,22,22,22,24,24,23,23,25) #SW-1, SW-2, SW-3, SW-4
 #COLORS OF POINTS
-COLORS<- c("cornflowerblue","dodgerblue4","darkolivegreen3","dodgerblue1","chartreuse3","darkgreen","mediumblue")#Elders, Gym,Leas,SW-1, SW-2, SW-3, SW-4
-COLORS2<- c("cornflowerblue","dodgerblue4","darkolivegreen3","dodgerblue1","chartreuse3","darkgreen","mediumblue","cyan3")#Elders, Gym,Leas,SW-1, SW-2, SW-3, SW-4, SF TuSu
-COLORS3<- c("cornflowerblue","dodgerblue4","darkolivegreen3","deeppink","deeppink4","dodgerblue1","chartreuse3","darkgreen","mediumblue","cyan3")#Elders, Gym,Leas,Pond-1, Pond-3, SW-1, SW-2, SW-3, SW-4, SF TuSu
+COLORS<- c("cornflowerblue","dodgerblue4","darkolivegreen3","dodgerblue1","chartreuse3","darkgreen","mediumblue")#SW-1, SW-2, SW-3, SW-4
+COLORS2<- c("cornflowerblue","dodgerblue4","darkolivegreen3","dodgerblue1","chartreuse3","darkgreen","mediumblue","cyan3")#SW-1, SW-2, SW-3, SW-4
+COLORS3<- c("cornflowerblue","dodgerblue4","darkolivegreen3","deeppink","deeppink4","dodgerblue1","chartreuse3","darkgreen","mediumblue","cyan3")#SW-1, SW-2, SW-3, SW-4
 
 
 
@@ -336,45 +336,6 @@ figBACT2<-plot_ly(data=ECOLI,x=~Date,y=~MPN_D,color=~Site,symbol=~Site, symbols 
   )
 figBACT2
 htmlwidgets::saveWidget(figBACT2, "Place_file_location_directory_here")
-
-#EVERYTHING BELOW IS LEFT OVER FROM WHEN PHOEBE CREATED THE CODE (DOES NOT NEED TO BE ENTERED AS PART OF THE CODE)
-# plot(emo)
-# figBACT<-figBACT %>% layout(images = list(source = raster2uri(as.raster(emo)),x = "2021-11-01", y = 200, sizex = 20, sizey = 20,xref = "x", yref = "y",xanchor = "left", yanchor = "bottom",sizing = "stretch"))
-#                                             #   x="2021-11-01" ,y= 200,sizex = 0.2,sizey = 0.2,opacity = 0.8)))
-# # x = 2, y = 2, sizex = 2, sizey = 1,xref = "x", yref = "y",xanchor = "left", yanchor = "bottom",sizing = "stretch"
-# # )
-# 
-# base64enc::dataURI(file = "images/rstudio.png")
-# #figBACT<-figBACT %>% add_lines(y=126,name='126',line=list(color='red',shape='linear'))
-# #figBACT<-add_hline(y=126)
-# 
-# figBACT2<-plot_ly(data=ECOLI,x=~Date,y=~MPN_D,color=~Site,symbol=~Site, symbols = c(P_SHAPES),colors = COLORS,
-#                  marker=list(size=10, line = list(color = 'black',width = 2)))
-# #figBACT<-figBACT %>% add_lines(y=126,name='126',line=list(color='red',shape='linear'))
-# figBACT2 <- figBACT2 %>% layout(shapes=list(type='line', x0= min(date_lims), x1= max(date_lims), y0=126, y1=126,
-#                                           line=list(dash='solid', width=2,color='red',label='126')))
-# figBACT2<-figBACT2 %>% layout(title=PLOT_TITLE2,yaxis = list(title = Y_LABEL2))
-# # fig2<-fig1 %>% labels=c("126")
-# #
-# # fig2<-fig1 %>%  layout(
-# #   images = list(
-#     list(source = EMO),
-#     x= "2021-10-01",
-#     y= 300,
-#     xref = "x",
-#     yref = "y",
-#     sizex = 2,
-#     sizey = 2,
-#     layer="above"
-#   ))
-# 
-# #add_segments(x=min(date_lims),xend=max(date_lims),y = 126,yend=126, name = 'Tribal WQS 126 MPN',mode = 'lines')
-# 
-# 
-# ggplotly(BACT,orignialData=TRUE,hoverinfo='GMEAN')
-# 
-
-
 
 # Raw Data Graphs (Optional) ----------------------------------------------
 
